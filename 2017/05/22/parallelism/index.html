@@ -3,14 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>xiangwei</title>
+  <title>Flink Parallelism | xiangwei</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="xiangwei">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="简介 官方介绍 parallelism指某个task其并行执行的subtask的数量 flink 中的每个source、transformation、sink均可以单独设置parallelism只需要在操作后调用setParallelism(num)即可,当上下游stream的parallelism不一致(由多变少或由少变多)时会有一个Rebalance行为。     1234567891011v">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flink Parallelism">
+<meta property="og:url" content="http://yoursite.com/2017/05/22/parallelism/index.html">
 <meta property="og:site_name" content="xiangwei">
+<meta property="og:description" content="简介 官方介绍 parallelism指某个task其并行执行的subtask的数量 flink 中的每个source、transformation、sink均可以单独设置parallelism只需要在操作后调用setParallelism(num)即可,当上下游stream的parallelism不一致(由多变少或由少变多)时会有一个Rebalance行为。     1234567891011v">
+<meta property="og:updated_time" content="2017-05-22T10:13:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="xiangwei">
+<meta name="twitter:title" content="Flink Parallelism">
+<meta name="twitter:description" content="简介 官方介绍 parallelism指某个task其并行执行的subtask的数量 flink 中的每个source、transformation、sink均可以单独设置parallelism只需要在操作后调用setParallelism(num)即可,当上下游stream的parallelism不一致(由多变少或由少变多)时会有一个Rebalance行为。     1234567891011v">
   
     <link rel="alternate" href="/atom.xml" title="xiangwei" type="application/atom+xml">
   
@@ -63,157 +67,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-Life Cycle of a Job" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/05/22/Life Cycle of a Job/" class="article-date">
-  <time datetime="2017-05-22T11:16:05.000Z" itemprop="datePublished">2017-05-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/22/Life Cycle of a Job/">Life Cycle of a Job</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="pre-flight-phase"><a href="#Pre-flight-Phase" class="headerlink" title="Pre-flight Phase"></a>Pre-flight Phase</h1><p>batch or streaming producing a JobGraph</p>
-<h1 id="jobclient"><a href="#JobClient" class="headerlink" title="JobClient"></a>JobClient</h1><p> library upload<br> job graph submission</p>
-<h1 id="jobmanager"><a href="#JobManager" class="headerlink" title="JobManager"></a>JobManager</h1><p>Library cache setup<br>execution graph creation, attaching to previous graph<br>master side initialization<br>streaming fault tolerance coordinator start<br>trigger scheduling<br>deploy task executions</p>
-<h1 id="taskmanager"><a href="#TaskManager" class="headerlink" title="TaskManager"></a>TaskManager</h1><p>Receive Task deployment<br>download libraries (if needed)<br>setup input / output readers and writers<br>create task thread<br>send status updates</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/05/22/Life Cycle of a Job/" data-id="cj301derk0007s7qod69v4wiv" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-System Components" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/05/22/System Components/" class="article-date">
-  <time datetime="2017-05-22T11:00:56.000Z" itemprop="datePublished">2017-05-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="jobmanager"><a href="#JobManager" class="headerlink" title="JobManager"></a>JobManager</h1><p>InstanceManager<br>BLOB server<br>Library Cache Manager<br>Scheduler<br>Archiver<br>TaskManager<br>MemoryManager<br>IOManager<br>BLOB Cache<br>Library Cache<br>Actor Systems &amp; Actors</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/05/22/System Components/" data-id="cj300twye0005s7qoxv371p3n" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Graph" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/05/22/Graph/" class="article-date">
-  <time datetime="2017-05-22T09:50:36.000Z" itemprop="datePublished">2017-05-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/22/Graph/">Graph</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><h1 id="graph-类型"><a href="#graph-类型" class="headerlink" title="graph 类型"></a>graph 类型</h1><h2 id="streamgraph"><a href="#StreamGraph" class="headerlink" title="StreamGraph"></a>StreamGraph</h2>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/05/22/Graph/" data-id="cj2zyblxx00028rqo3oa6e3yq" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/05/22/hello-world/" class="article-date">
-  <time datetime="2017-05-22T05:43:43.000Z" itemprop="datePublished">2017-05-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/22/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/05/22/hello-world/" data-id="cj2zptojn0000ssqo5hnbqn2f" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-parallelism" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-parallelism" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/05/22/parallelism/" class="article-date">
   <time datetime="2017-05-22T02:00:00.000Z" itemprop="datePublished">2017-05-22</time>
@@ -226,8 +80,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/22/parallelism/">Flink Parallelism</a>
+    <h1 class="article-title" itemprop="name">
+      Flink Parallelism
     </h1>
   
 
@@ -264,10 +118,23 @@
     </footer>
   </div>
   
-</article>
-
+    
+<nav id="article-nav">
+  
+    <a href="/2017/05/22/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+</nav>
 
   
+</article>
 
 </section>
         
