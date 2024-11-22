@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/hxiangwei.github.io/static/css/main.22971c8b.css",
+    "main.js": "/hxiangwei.github.io/static/js/main.32a47f46.js",
+    "index.html": "/hxiangwei.github.io/index.html",
+    "main.22971c8b.css.map": "/hxiangwei.github.io/static/css/main.22971c8b.css.map",
+    "main.32a47f46.js.map": "/hxiangwei.github.io/static/js/main.32a47f46.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.22971c8b.css",
+    "static/js/main.32a47f46.js"
+  ]
+}
